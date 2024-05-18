@@ -3,5 +3,34 @@ import { PrismaService } from '../prisma.client';
 
 @Injectable()
 export class ShipmentRepository {
-  constructor(private prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) {}
+
+  async create(data: any) {
+    return this.prisma.shipment.create({
+      data,
+    });
+  }
+
+  async findAll() {
+    return this.prisma.shipment.findMany();
+  }
+
+  async findById(id: string) {
+    return this.prisma.shipment.findUnique({
+      where: { id },
+    });
+  }
+
+  async update(id: string, data: any) {
+    return this.prisma.shipment.update({
+      where: { id },
+      data,
+    });
+  }
+
+  async delete(id: string) {
+    return this.prisma.shipment.delete({
+      where: { id },
+    });
+  }
 }
