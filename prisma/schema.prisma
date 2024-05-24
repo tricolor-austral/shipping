@@ -6,6 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x", "darwin"]
 }
 
 datasource db {
@@ -22,6 +23,12 @@ model Shipment {
   status Status @default(DISPATCHED)
 }
 
+model User {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  email     String  @unique
+  password  String
+}
 
 enum Status {
   DISPATCHED

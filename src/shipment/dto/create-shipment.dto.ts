@@ -1,5 +1,4 @@
 import { IsString, IsDate, IsEnum, IsNotEmpty } from 'class-validator';
-import { Type } from 'class-transformer';
 import { Status } from '@prisma/client';
 
 export class CreateShipmentDto {
@@ -16,7 +15,6 @@ export class CreateShipmentDto {
   status: Status;
 
   @IsDate()
-  @Type(() => Date)
   @IsNotEmpty()
   dueDate: Date;
 }

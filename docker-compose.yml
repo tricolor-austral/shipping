@@ -24,7 +24,7 @@ services:
       dockerfile: Dockerfile
     container_name: shipping-app
     ports:
-      - '8080:8080'
+      - '8888:8080'
     volumes:
       - ./src:/app/src
     depends_on:
