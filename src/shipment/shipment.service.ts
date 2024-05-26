@@ -18,10 +18,6 @@ export class ShipmentService {
     return this.shipmentRepository.findById(id);
   }
 
-  async updateShipment(id: string, data: any) {
-    return this.shipmentRepository.update(id, data);
-  }
-
   async deleteShipment(id: string) {
     return this.shipmentRepository.delete(id);
   }
