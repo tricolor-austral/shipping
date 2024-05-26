@@ -9,6 +9,7 @@ import {
 } from '@nestjs/common';
 import { ShipmentService } from './shipment.service';
 import { CreateShipmentDto } from './dto/create-shipment.dto';
+import { Status } from '@prisma/client';
 
 @Controller('shipments')
 export class ShipmentController {
@@ -37,5 +38,9 @@ export class ShipmentController {
   @Delete(':id')
   async deleteShipment(@Param('id') id: string) {
     return this.shipmentService.deleteShipment(id);
+  }
+  @Post(':id/change-status')
+  async changeStatus(@Param('id') id: string, @Body('status') status: Status) {
+    return this.shipmentService.changeStatus(id, status);
   }
 }

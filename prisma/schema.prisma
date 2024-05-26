@@ -5,7 +5,7 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
   binaryTargets = ["native", "debian-openssl-3.0.x", "darwin"]
 }
 
@@ -15,18 +15,18 @@ datasource db {
 }
 
 model Shipment {
-  id          String   @id @default(uuid())
-  createdAt   DateTime @default(now())
-  dueDate     DateTime
-  orderID     String
-  destiny     String
-  status Status @default(DISPATCHED)
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  dueDate   DateTime @default(now()) // en 7 dias
+  orderID   String
+  status    Status   @default(DISPATCHED)
+  buyerId   String
 }
 
 model User {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
-  email     String  @unique
+  email     String   @unique
   password  String
 }
 
@@ -34,5 +34,4 @@ enum Status {
   DISPATCHED
   PROGRESS
   DELIVERED
-
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma.client';
+import { Status } from '@prisma/client';
 
 @Injectable()
 export class ShipmentRepository {
@@ -31,6 +32,12 @@ export class ShipmentRepository {
   async delete(id: string) {
     return this.prisma.shipment.delete({
       where: { id },
+    });
+  }
+  async changeStatus(id: string, status: Status) {
+    return this.prisma.shipment.update({
+      where: { id },
+      data: { status },
     });
   }
 }

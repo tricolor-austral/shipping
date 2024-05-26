@@ -1,5 +1,4 @@
-import { IsString, IsDate, IsEnum, IsNotEmpty } from 'class-validator';
-import { Status } from '@prisma/client';
+import { IsString, IsNotEmpty } from 'class-validator';
 
 export class CreateShipmentDto {
   @IsString()
@@ -8,13 +7,5 @@ export class CreateShipmentDto {
 
   @IsString()
   @IsNotEmpty()
-  destiny: string;
-
-  @IsEnum(Status)
-  @IsNotEmpty()
-  status: Status;
-
-  @IsDate()
-  @IsNotEmpty()
-  dueDate: Date;
+  buyerId: string;
 }
