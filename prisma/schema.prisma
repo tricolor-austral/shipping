@@ -17,7 +17,7 @@ datasource db {
 model Shipment {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
-  dueDate   DateTime @default(now()) // en 7 dias
+  dueDate   DateTime @default(now())
   orderID   String
   status    Status   @default(DISPATCHED)
   buyerId   String

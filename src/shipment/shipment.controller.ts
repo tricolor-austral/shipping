@@ -30,17 +30,14 @@ export class ShipmentController {
     return this.shipmentService.getShipmentById(id);
   }
 
-  @Put(':id')
-  async updateShipment(@Param('id') id: string, @Body() data: any) {
-    return this.shipmentService.updateShipment(id, data);
-  }
-
   @Delete(':id')
   async deleteShipment(@Param('id') id: string) {
     return this.shipmentService.deleteShipment(id);
   }
+
   @Post(':id/change-status')
   async changeStatus(@Param('id') id: string, @Body('status') status: Status) {
+    console.log('id', id);
     return this.shipmentService.changeStatus(id, status);
   }
 }

@@ -6,37 +6,37 @@ async function main() {
   const shipments = [
     {
       orderID: '12345',
-      destiny: '123 Main St, Springfield',
+      buyerId: 'buyer1',
       status: Status.DISPATCHED,
       dueDate: new Date('2024-06-30T10:00:00Z'),
     },
     {
       orderID: '67890',
-      destiny: '456 Elm St, Shelbyville',
+      buyerId: 'buyer2',
       status: Status.PROGRESS,
       dueDate: new Date('2024-07-15T12:00:00Z'),
     },
     {
       orderID: '54321',
-      destiny: '789 Oak St, Capital City',
+      buyerId: 'buyer3',
       status: Status.DELIVERED,
       dueDate: new Date('2024-08-01T09:00:00Z'),
     },
     {
       orderID: '98765',
-      destiny: '321 Maple St, Springfield',
+      buyerId: 'buyer4',
       status: Status.DISPATCHED,
       dueDate: new Date('2024-08-15T08:00:00Z'),
     },
     {
       orderID: '24680',
-      destiny: '654 Oak St, Shelbyville',
+      buyerId: 'buyer5',
       status: Status.PROGRESS,
       dueDate: new Date('2024-09-01T14:00:00Z'),
     },
     {
       orderID: '13579',
-      destiny: '987 Elm St, Capital City',
+      buyerId: 'buyer6',
       status: Status.DELIVERED,
       dueDate: new Date('2024-09-15T11:00:00Z'),
     },
