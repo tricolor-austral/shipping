@@ -1,15 +1,17 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ShipmentService } from './shipment.service';
-import { PrismaService } from "../prisma.client";
-import { ShipmentRepositoryMock } from "./shipment.repositoryMock";
-import { ShipmentRepository } from "./shipment.repository";
+import { PrismaService } from '../prisma.client';
+import { ShipmentRepositoryMock } from './shipment.repositoryMock';
+import { ShipmentRepository } from './shipment.repository';
 
 describe('ShipmentService', () => {
   let service: ShipmentService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [PrismaService,ShipmentService,
+      providers: [
+        PrismaService,
+        ShipmentService,
         {
           provide: ShipmentRepository,
           useClass: ShipmentRepositoryMock,
