@@ -19,7 +19,7 @@ model Shipment {
   createdAt DateTime @default(now())
   dueDate   DateTime @default(now())
   orderID   String
-  status    Status   @default(DISPATCHED)
+  status    Status   @default(NEW)
   buyerId   String
 }
 
@@ -31,7 +31,7 @@ model User {
 }
 
 enum Status {
-  DISPATCHED
+  NEW
   PROGRESS
   DELIVERED
 }
