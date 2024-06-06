@@ -5,7 +5,4 @@ export class CreateShipmentDto {
   @IsNotEmpty()
   orderID: string;
 
-  @IsString()
-  @IsNotEmpty()
-  buyerId: string;
 }

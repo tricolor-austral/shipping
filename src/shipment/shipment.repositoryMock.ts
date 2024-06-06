@@ -7,7 +7,7 @@ export class ShipmentRepositoryMock extends ShipmentRepository {
   private nextId : string ='1'
 
   create(ship: CreateShipmentDto): Promise<Shipment> {
-    const newShipment : Shipment = { ...ship, id: this.nextId, status: 'DISPATCHED', createdAt: new Date(), dueDate: new Date() };
+    const newShipment: Shipment = { ...ship, id: this.nextId, status: 'NEW', createdAt: new Date(), dueDate: new Date() };
     this.shipments.push(newShipment);
     this.nextId = (BigInt(this.nextId) + BigInt(1)).toString();
     return Promise.resolve(newShipment);

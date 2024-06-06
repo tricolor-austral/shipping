@@ -25,13 +25,13 @@ export class ShipmentService {
   async changeStatus(id: string, status: Status) {
     const shipments = await this.shipmentRepository.changeStatus(id, status);
     const value = {
-      shipementId: shipments.id,
+      id: shipments.orderID,
       status: shipments.status,
     };
     try {
       //Poner ngrok correcto
-      await fetch('http://localhost:3000/shipments/', {
-        method: 'POST',
+      await fetch('https://fc43-181-169-17-49.ngrok-free.app/order', {
+        method: 'PUT',
         body: JSON.stringify(value),
         headers: { 'Content-Type': 'application/json' },
       });

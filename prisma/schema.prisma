@@ -20,7 +20,6 @@ model Shipment {
   dueDate   DateTime @default(now())
   orderID   String
   status    Status   @default(NEW)
-  buyerId   String
 }
 
 model User {
